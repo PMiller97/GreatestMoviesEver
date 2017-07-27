@@ -12,10 +12,31 @@
 
 @*Got rid of table area to get rid of table header (ActorName, DOB, Gender) for HTML purposes*@
 
+<div class="row">
+    <div class="col-md-4">
+        <p>
+
+            <img src="~/images/rsz_marilyn.jpg" />
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        <p>
+            <img src="~/images/rsz_washington_denzel.jpg" />
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        <p>
+            <img src="~/images/rsz_jason.jpg" />
+        </p>
+    </div>
+</div>
+
     <div class="row"> @*Changed this from a table (td) to a div.*@
         @foreach (var item in Model)
         {
-            <div class="col-md-4"> @*Column 4, so that it is 3 across.*@
+            <div class="col-md-3" style="margin-top:15px; margin-bottom:15px; margin-left:15px; margin-right:15px;"> @*Column 4, so that it is 3 across.*@
                 <h1>
                     Actor's name: @Html.DisplayFor(modelItem => item.ActorName) @*Added in "Actor's name:" for HTML purposes*@
                 </h1>
@@ -23,17 +44,35 @@
         @*changed from (td) to (h1 or h4) for div purposes and the smaller the number.. the smaller the print*@
 
                 <h4>
-                    This actor was born on: @Html.DisplayFor(modelItem => item.DOB)
+                    This actor was born on: @item.DOB.ToShortDateString()
                 </h4>
-                <h6>             
+                <h5>             
                      Gender: @Html.DisplayFor(modelItem => item.Gender)
-                </h6>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ActorID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ActorID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ActorID })
-                </td>
+                </h5>
+
             </div>
         }
     </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <p>
+                <img src="~/images/rsz_salma.gif" />
+            </p>
+        </div>
+
+        <div class="col-md-4">
+            <p>
+                <img src="~/images/rsz_ian.jpg" />
+            </p>
+        </div>
+
+        <div class="col-md-4">
+            <p>
+                <img src="~/images/rsz_jennifer.jpg" />   
+            </p>
+        </div>
+     </div>
+
+   
 
