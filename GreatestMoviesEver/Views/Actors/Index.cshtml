@@ -9,37 +9,31 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ActorName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DOB)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Gender)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ActorName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DOB)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Gender)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ActorID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ActorID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ActorID })
-        </td>
-    </tr>
-}
+@*Got rid of table area to get rid of table header (ActorName, DOB, Gender) for HTML purposes*@
 
-</table>
+    <div class="row"> @*Changed this from a table (td) to a div.*@
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4"> @*Column 4, so that it is 3 across.*@
+                <h1>
+                    Actor's name: @Html.DisplayFor(modelItem => item.ActorName) @*Added in "Actor's name:" for HTML purposes*@
+                </h1>
+
+        @*changed from (td) to (h1 or h4) for div purposes and the smaller the number.. the smaller the print*@
+
+                <h4>
+                    This actor was born on: @Html.DisplayFor(modelItem => item.DOB)
+                </h4>
+                <h6>             
+                     Gender: @Html.DisplayFor(modelItem => item.Gender)
+                </h6>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ActorID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ActorID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ActorID })
+                </td>
+            </div>
+        }
+    </div>
+

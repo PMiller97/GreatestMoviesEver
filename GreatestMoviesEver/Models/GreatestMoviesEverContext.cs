@@ -24,5 +24,10 @@ namespace GreatestMoviesEver.Models
         public System.Data.Entity.DbSet<GreatestMoviesEver.Actor> Actors { get; set; }
 
         public System.Data.Entity.DbSet<GreatestMoviesEver.Movie> Movies { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
