@@ -1,8 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-image: url('../images/3582_L-batman-sign.jpg');
-    background-size: cover;
+    background-image: url('../images/KSZ2ubK.jpg');
+    background-position:center;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -25,11 +25,19 @@ textarea {
     max-width: 280px;
 }
 
-.col-md-3 {
+.row {
+    text-align:center;
+}
+
+.col-md-2 {
     background-color:black;
+    background-position:right;
     color:white;
     font-family: 'Artifika', serif;
+    text-align:center;
 }
+
+
 
 
 
